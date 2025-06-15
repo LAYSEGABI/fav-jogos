@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -19,14 +25,12 @@ body {
   margin: auto;
   padding: 1rem;
   gap: 3rem;
-  background: linear-gradient(
-    to right,
-    transparent,
-    rgba(0, 0, 0, 0.705),
-    rgba(0, 0, 0, 0.897),
-    rgba(0, 0, 0, 0.747),
-    transparent
-  );
+  background: linear-gradient(to right,
+      transparent,
+      rgba(0, 0, 0, 0.705),
+      rgba(0, 0, 0, 0.897),
+      rgba(0, 0, 0, 0.747),
+      transparent);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -38,14 +42,14 @@ body {
   top: 40px;
   left: 40px;
   margin: 0 auto;
-  width: 20vw;  
+  width: 20vw;
 }
 
 a {
   text-decoration: none;
 }
 
-h1{
+h1 {
   text-align: center;
   color: #ffffff;
 }
@@ -53,6 +57,7 @@ h1{
 h2 {
   color: rgb(255, 255, 255);
 }
+
 .description,
 .note {
   text-align: center;
@@ -147,7 +152,7 @@ input::placeholder {
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  
+
 }
 
 .game-header strong {
@@ -243,6 +248,51 @@ input::placeholder {
     width: 100%;
     align-items: center;
   }
+
+  .games-list {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .game-item {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+
+  .form {
+    width: 90%;
+  }
+
+  .form-input {
+    width: 90%;
+  }
+
+  .addGame {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    top: auto;
+    margin: auto;
+    padding: 0;
+
+    left: auto;
+  }
+
   .games-list {
     width: 100%;
     justify-content: center;
