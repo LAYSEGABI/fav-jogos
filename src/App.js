@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "https://api-json-server-rv7s.onrender.com/games";
+const API_URL = "https://api-json-server-1-dmqx.onrender.com/games";
 
 export default function GamesList() {
   console.log("Renderizando GamesList");
@@ -19,7 +19,7 @@ export default function GamesList() {
   const [editLink, setEditLink] = useState("");
 
   useEffect(() => {
-  fetch("https://api-json-server-rv7s.onrender.com/games")
+  fetch("https://api-json-server-1-dmqx.onrender.com/games")
     .then((response) => response.json())
     .then((data) => {
       setGames(data);
