@@ -1,38 +1,256 @@
-.App {
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/public/img/banner-gif.gif");
+  padding: 0;
+  color: white;
+  height: 100%;
+  background-attachment: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 100vw;
+  height: 100%;
+  margin: auto;
+  padding: 1rem;
+  gap: 3rem;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(0, 0, 0, 0.705),
+    rgba(0, 0, 0, 0.897),
+    rgba(0, 0, 0, 0.747),
+    transparent
+  );
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.addGame {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: left;
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  margin: 0 auto;
+  width: 20vw;  
+}
+
+a {
+  text-decoration: none;
+}
+
+h1{
+  text-align: center;
+  color: #ffffff;
+}
+
+h2 {
+  color: rgb(255, 255, 255);
+}
+.description,
+.note {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #eeeeee;
+  margin-bottom: 1rem;
+}
+
+.edit-input {
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  padding-left: 35px;
+  /* espaço pro ícone não sobrepor o texto */
+  height: 40px;
+}
+
+
+.form {
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 1rem;
+}
+
+.form input {
+  padding: 0.5rem;
+  height: 30px;
+  border: 1px solid #4648bb;
+  border-radius: 6px;
+  color: white;
+  background-color: rgba(12, 50, 82, 0.562);
+}
+
+input::placeholder {
+  color: #e6e6e6;
+}
+
+.form button {
+  background-color: #28a796;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  margin-top: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.form button:hover {
+  transform: translateY(-5px);
+  background-color: #13cfa0;
+}
+
+.games-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 60vw;
+  margin-left: auto;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+}
+
+.game-item {
+  display: flex;
+  padding: .5rem;
+  flex-direction: column;
+  width: 220px;
+  height: 270px;
+  margin-bottom: 1rem;
+  border: 2px solid #197ef1;
+  border-radius: 10px;
+  background: #050a3062;
+  box-shadow: 0 2px 18px rgba(6, 159, 248, 0.514);
+  transition: .5s;
+}
+
+.game-item:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+.game-header {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.game-header strong {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.game-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.game-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.link-btn,
+.delete-btn {
+  border: none;
+  padding: 0.4rem 0.6rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.link-btn {
+  background-color: #3e92f1;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.link-btn:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #c82333;
+}
+
+.edit-input {
+  width: 80%;
+  margin: 0.3rem 0;
+  padding: 0.4rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.stars {
+  margin-right: auto;
+  font-size: 1.5rem;
+}
+
+.message,
+.error {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.error {
+  color: red;
+}
+
+
+
+@media (max-width: 700px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .form {
+    width: 100%;
+  }
+
+  .form-input {
+    width: 100%;
+  }
+
+  .addGame {
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+  }
+  .games-list {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .game-item {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 }
