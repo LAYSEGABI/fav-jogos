@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
-const API_URL = "http://localhost:4000/games";
+const API_URL = "https://api-json-server-rv7s.onrender.com/games";
 
 export default function GamesList() {
   console.log("Renderizando GamesList");
@@ -19,21 +19,10 @@ export default function GamesList() {
   const [editLink, setEditLink] = useState("");
 
   useEffect(() => {
-    console.log("Renderizando GamesList");
-    fetch(API_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error("Erro ao buscar jogos");
-        return res.json();
-      })
-      .then((data) => {
-        setGames(data); // 
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error("ERRO FETCH:", err);
-        setError("Erro ao buscar jogos");
-        setLoading(false);
-      });
+    fetch("https://api-json-server-rv7s.onrender.com")
+      .then((response) => response.json())
+      .then((data) => setGames(data))
+      .catch((err) => console.error(err));
   }, []);
 
   function addGame() {
@@ -188,7 +177,7 @@ export default function GamesList() {
                     ))}
                   </div>
                   <strong>{game.title}</strong>
-                     
+
                   <div className="game-buttons">
                     {game.link && (
                       <a
