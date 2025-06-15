@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/fav-jogos/static/css/main.0c6f951e.css",
+    "main.js": "/fav-jogos/static/js/main.ffcc1c71.js",
+    "static/js/453.245485ad.chunk.js": "/fav-jogos/static/js/453.245485ad.chunk.js",
+    "static/media/banner-gif.gif": "/fav-jogos/static/media/banner-gif.c235fa492eb50a2a5dc8.gif",
+    "index.html": "/fav-jogos/index.html",
+    "main.0c6f951e.css.map": "/fav-jogos/static/css/main.0c6f951e.css.map",
+    "main.ffcc1c71.js.map": "/fav-jogos/static/js/main.ffcc1c71.js.map",
+    "453.245485ad.chunk.js.map": "/fav-jogos/static/js/453.245485ad.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0c6f951e.css",
+    "static/js/main.ffcc1c71.js"
+  ]
+}
