@@ -19,10 +19,13 @@ export default function GamesList() {
   const [editLink, setEditLink] = useState("");
 
   useEffect(() => {
-    fetch("https://api-json-server-rv7s.onrender.com")
-      .then((response) => response.json())
+    fetch("https://api-json-server-rv7s.onrender.com/games")
+      .then((response) => {
+        if (!response.ok) throw new Error("Erro na requisição");
+        return response.json();
+      })
       .then((data) => setGames(data))
-      .catch((err) => console.error(err));
+      .catch((err) => setError("Erro ao buscar jogos"));
   }, []);
 
   function addGame() {
